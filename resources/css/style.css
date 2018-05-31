@@ -7,7 +7,7 @@ html {
 /*Header*/
 
 .container {
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -16,8 +16,12 @@ header {
   background-color: black;
   color: white;
   height: 3rem;
+}
+
+header .container {
   display: flex;
   align-items: center;
+  padding: 0.66rem 0;
 }
 
 header img {
@@ -28,7 +32,6 @@ header img {
 
 header span {
   font-size: 1rem;
-  padding: 0.66rem 0;
   text-transform: uppercase;
 }
 
@@ -40,7 +43,6 @@ header span {
   background-position: center;
   background-repeat: no-repeat;
   height: 25rem;
-  width: 100%;
 }
 
 .banner-box {
@@ -67,24 +69,27 @@ header span {
 
 /*Navigation*/
 
-.nav {
+.nav, .nav-tablet {
   background-color: firebrick;
   color: white;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .nav span {
   padding: 0.75rem 0;
-
 }
 
+.nav-tablet {
+  display: none;
+}
 
 /*Product Grid*/
 
 .product-grid {
-  margin: 3rem auto;
-  width: 960px;
+  margin: 3rem 0 0 0;
   display: flex;
   justify-content: space-between;
 }
@@ -119,8 +124,7 @@ header span {
 .info {
   display: flex;
   justify-content: space-between;
-  width: 960px;
-  margin: auto;
+  margin-top: 3rem;
 }
 
 .location, .hours {
@@ -146,8 +150,71 @@ footer {
   display: flex;
   align-items: center;
   margin-top: 4rem;
+  text-align: left;
+  width: 100%;
 }
 
-footer h3 {
-  width: auto;
+footer .container {
+  width: 100%;
+}
+
+
+@media only screen and (max-width:1024px) {
+  .nav {
+    display: none;
+  }
+  .nav-tablet {
+    display: block;
+    text-align: center;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .glasses {
+    display: none;
+  }
+  .pen, .watch {
+    width: 47%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .main-banner {
+    height: 15rem;
+  }
+
+  .banner-box {
+    width: 100%;
+    padding: 1rem 2rem;
+    top: 10rem;
+  }
+  .banner-box span {
+    font-size: 0.77rem;
+  }
+  .banner-box h1 {
+    font-size: 1rem;
+  }
+  .watch {
+    display: none;
+  }
+  .pen {
+    width: 90%;
+    margin: auto;
+  }
+  .info {
+    width: 90%;
+    margin: 3rem auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .location, .hours {
+    width: 100%;
+  }
+  .location {
+    margin-bottom: 0.5rem;
+  }
+  footer {
+    text-align: center;
+  }
 }
